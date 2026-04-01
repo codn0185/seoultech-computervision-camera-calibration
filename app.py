@@ -6,21 +6,21 @@ def main():
     option = int(
         input(
             """
-            === Select Option ===
-            1: Camera Calibration
-            2: Distortion Correction
-            =====================
-            """
+===== Select Option =====
+1: Camera Calibration
+2: Distortion Correction
+=========================
+Option: """
         )
     )
 
     match (option):
         case 1:
-            print("Running Camera Calibration")
+            print("Program Running: Camera Calibration")
             app = CameraCalibration()
             app.run()
         case 2:
-            print("Running Distortion Correction")
+            print("Program Running: Distortion Correction")
             app = DistortionCorrection()
             app.run()
         case _:
