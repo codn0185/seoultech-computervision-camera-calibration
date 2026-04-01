@@ -15,5 +15,16 @@ class CameraCalibration(VideoProcessing):
         pass
 
     # 키 입력 처리
-    def handle_key_input(self, keycode: int):
-        pass
+    def handle_key_input(self, keycode: int, frame: np.ndarray = None):
+        match keycode:
+            case Keycode.ESC:
+                pass
+            case Keycode.ENTER:
+                pass
+            case Keycode.SPACE:
+                pass
+        """
+        ESC: 프로그램 종료
+        ENTER: 이미지 선택
+        SPACE: 정보 출력 (로그)
+        """

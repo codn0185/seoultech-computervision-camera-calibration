@@ -44,7 +44,7 @@ class VideoProcessing:
             return
 
         # 키 입력 처리
-        self.handle_key_input(cv.waitKey(0))
+        self.handle_key_input(cv.waitKey(0), frame)
 
         # 프레임 가공
         processed_frame = self.process_frame(frame)
@@ -60,5 +60,5 @@ class VideoProcessing:
         pass
 
     # 키 입력 처리
-    def handle_key_input(self, keycode: int):
+    def handle_key_input(self, keycode: int, frame: np.ndarray = None):
         pass
