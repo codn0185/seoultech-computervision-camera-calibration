@@ -1,9 +1,17 @@
 class App:
-    WINDOW_TITLE: str = "Camera Calibration"
-
     VIDEO_DIRECTORY: str = "videos"
-    VIDEO_FILE: str = "my_video.avi"
-    VIDEO_PATH: str = f"{VIDEO_DIRECTORY}/{VIDEO_FILE}"
+
+    CAMERA_CALIBRATION_WINDOW_TITLE: str = "Camera Calibration"
+    CAMERA_CALIBRATION_VIDEO_FILE_NAME: str = "my_video_1.avi"
+    CAMERA_CALIBRATION_VIDEO_FILE_PATH: str = (
+        f"{VIDEO_DIRECTORY}/{CAMERA_CALIBRATION_VIDEO_FILE_NAME}"
+    )
+
+    DISTORTION_CORRECTION_WINDOW_TITLE: str = "Distortion Correction"
+    DISTORTION_CORRECTION_VIDEO_FILE_NAME: str = "my_video_2.avi"
+    DISTORTION_CORRECTION_VIDEO_FILE_PATH: str = (
+        f"{VIDEO_DIRECTORY}/{DISTORTION_CORRECTION_VIDEO_FILE_NAME}"
+    )
 
 
 class ChessBoard:
@@ -12,6 +20,6 @@ class ChessBoard:
 
 
 class Keycode:
-    ESC: int
-    SPACE: int
-    ENTER: int
+    ESC: int = 27
+    SPACE: int = 32
+    ENTER: int = 13

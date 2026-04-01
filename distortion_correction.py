@@ -6,9 +6,9 @@ import numpy as np
 import cv2 as cv
 
 
-class CameraCalibration(VideoProcessing):
-    WINDOW_TITLE: str = App.CAMERA_CALIBRATION_WINDOW_TITLE
-    VIDEO_FILE_PATH: str = App.CAMERA_CALIBRATION_VIDEO_FILE_PATH
+class DistortionCorrection(VideoProcessing):
+    WINDOW_TITLE: str = App.DISTORTION_CORRECTION_WINDOW_TITLE
+    VIDEO_FILE_PATH: str = App.DISTORTION_CORRECTION_VIDEO_FILE_PATH
 
     # 프레임 가공
     def process_frame(self, frame: np.ndarray) -> np.ndarray:
