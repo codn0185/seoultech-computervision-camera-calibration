@@ -1,25 +1,25 @@
+import os
+
+
 class App:
-    VIDEO_DIRECTORY: str = "videos"
+    VIDEO_DIRECTORY: str = "video"
+    VIDEO_FILENAME: str = "my_video.mp4"
+    VIDEO_FILE_PATH: str = os.path.join(VIDEO_DIRECTORY, VIDEO_FILENAME)
 
     CAMERA_CALIBRATION_WINDOW_TITLE: str = "Camera Calibration"
-    CAMERA_CALIBRATION_VIDEO_FILE_NAME: str = "my_video_1.avi"
-    CAMERA_CALIBRATION_VIDEO_FILE_PATH: str = (
-        f"{VIDEO_DIRECTORY}/{CAMERA_CALIBRATION_VIDEO_FILE_NAME}"
-    )
-
     DISTORTION_CORRECTION_WINDOW_TITLE: str = "Distortion Correction"
-    DISTORTION_CORRECTION_VIDEO_FILE_NAME: str = "my_video_2.avi"
-    DISTORTION_CORRECTION_VIDEO_FILE_PATH: str = (
-        f"{VIDEO_DIRECTORY}/{DISTORTION_CORRECTION_VIDEO_FILE_NAME}"
-    )
 
 
 class ChessBoard:
-    PATTERN: tuple[int, int]
-    CELL_SIZE: int
+    PATTERN: tuple[int, int] = (7, 10)  # Vertices (h, w)
+    CELL_SIZE: int = 25  # Cell Size (mm)
 
 
 class Keycode:
     ESC: int = 27
     SPACE: int = 32
     ENTER: int = 13
+    A: int = 65
+    a: int = 97
+    R: int = 82
+    r: int = 114
