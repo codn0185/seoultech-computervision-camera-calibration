@@ -173,7 +173,9 @@ class CameraCalibration:
     # 프로그램 실행
     def run(self):
         self.state_machine.to_playing()
-        self._loop()
+
+        while not self.state_machine.is_exit():
+            self.state_machine.run()
 
     # 비디오 정보 불러오기
     def _load_video_info(self):
@@ -181,15 +183,6 @@ class CameraCalibration:
         self.video_width = self.video_capture.get(cv.CAP_PROP_FRAME_WIDTH)
         self.video_fps = self.video_capture.get(cv.CAP_PROP_FPS)
         self.video_msec = int(1000 / min(self.video_fps, 240))
-
-    # 프로그램 루프
-    def _loop(self):
-        if self.state_machine.is_exit():
-            return
-
-        self.state_machine.run()
-
-        self._loop()
 
     # 키 입력 처리
     def handle_key_input(self, keycode: int):
@@ -314,10 +307,6 @@ class CameraCalibration:
             print(f"- {key:<8}:")
             print(f"{value}")
         print("============================")
-
-    # 카메라 캘리브레이션 결과 반환
-    def get_camera_calibration_data(self):
-        return self.camera_calibration_data
 
 
 """ 
