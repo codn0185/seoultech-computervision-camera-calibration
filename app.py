@@ -3,6 +3,8 @@ from distortion_correction import DistortionCorrection
 
 
 def main():
+    camera_calibration_app = CameraCalibration()
+    distortion_Correction_app = DistortionCorrection()
     while True:
         print("\n\n")
         print("===== Select Option =====")
@@ -18,12 +20,10 @@ def main():
                 break
             case 1:
                 print("Program Running: Camera Calibration")
-                app = CameraCalibration()
-                app.run()
+                camera_calibration_app.run()
             case 2:
                 print("Program Running: Distortion Correction")
-                app = DistortionCorrection()
-                app.run()
+                distortion_Correction_app.run()
             case _:
                 print(f"Invalid Option Selected: {option}")
 
