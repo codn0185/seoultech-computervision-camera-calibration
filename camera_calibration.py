@@ -1,4 +1,5 @@
 from config import App, ChessBoard, Keycode
+from utils import Json
 
 import os
 import numpy as np
@@ -276,8 +277,6 @@ class CameraCalibration:
             if complete:
                 img_points.append(pts)
 
-        # FIXME
-        # 해당 부분에서 카메라 캘리브레이션 실패
         if not img_points:
             print(
                 "No complete chessboard corners were detected in the selected images."
@@ -305,6 +304,9 @@ class CameraCalibration:
             "tvecs": tvecs,  # Transform Matrix - t
         }
 
+        # .json 파일로 저장
+        self.save_camera_calibration_data_to_json()
+
         return True
 
     # 카메라 캘리브레이션 데이터 출력
@@ -314,6 +316,13 @@ class CameraCalibration:
             print(f"- {key:<8}:")
             print(f"{value}")
         print("============================")
+
+    # 카메라 캘리브레이션 데이터를 json 파일로 저장
+    def save_camera_calibration_data_to_json(self):
+        Json.save(
+            self.camera_calibration_data,
+            f"{App.DATA_DIRECTORY}/{App.CAMERA_CALIBRATION_DATA_FILE}",
+        )
 
 
 """ 

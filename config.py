@@ -6,6 +6,9 @@ class App:
     VIDEO_FILENAME: str = "my_video.mp4"
     VIDEO_FILE_PATH: str = os.path.join(VIDEO_DIRECTORY, VIDEO_FILENAME)
 
+    DATA_DIRECTORY: str = "data"
+    CAMERA_CALIBRATION_DATA_FILE = "camera_calibration_data"
+
     CAMERA_CALIBRATION_WINDOW_TITLE: str = "Camera Calibration"
     DISTORTION_CORRECTION_WINDOW_TITLE: str = "Distortion Correction"
 
