@@ -68,6 +68,7 @@ class PausedState(State):
 class ExitState(State):
     def enter(self):
         super().enter()
+        self.controller.exit_program()
 
     def run(self):
         pass
@@ -247,6 +248,11 @@ class CameraCalibration:
     # 비디오 재시작
     def set_to_first_frame(self):
         self.video_capture.set(cv.CAP_PROP_POS_FRAMES, 0)
+
+    # 프로그램 종료
+    def exit_program(self):
+        self.video_capture.release()
+        cv.destroyAllWindows()
 
     # 현재 프레임을 이미지 리스트에 추가
     def add_last_frame_to_image_list(self):
