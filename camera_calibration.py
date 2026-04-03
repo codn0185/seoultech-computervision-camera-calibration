@@ -299,8 +299,8 @@ class CameraCalibration:
         )
 
         self.camera_calibration_data = {
-            "camera_matrix": mtx,  # Camera Matrix - K
-            "dist_coeffs": dist,  # Distortion Coefficient - d
+            "mtx": mtx,  # Camera Matrix - K
+            "dist": dist,  # Distortion Coefficient - d
             "rvecs": rvecs,  # Rotation Matrix - R
             "tvecs": tvecs,  # Transform Matrix - t
         }
