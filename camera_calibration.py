@@ -170,19 +170,19 @@ class CameraCalibration:
         # FSM 초기화
         self.state_machine = FiniteStateMachine(self)
 
-    # 프로그램 실행
-    def run(self):
-        self.state_machine.to_playing()
-
-        while not self.state_machine.is_exit():
-            self.state_machine.run()
-
     # 비디오 정보 불러오기
     def _load_video_info(self):
         self.video_height = self.video_capture.get(cv.CAP_PROP_FRAME_HEIGHT)
         self.video_width = self.video_capture.get(cv.CAP_PROP_FRAME_WIDTH)
         self.video_fps = self.video_capture.get(cv.CAP_PROP_FPS)
         self.video_msec = int(1000 / min(self.video_fps, 240))
+
+    # 프로그램 실행
+    def run(self):
+        self.state_machine.to_playing()
+
+        while not self.state_machine.is_exit():
+            self.state_machine.run()
 
     # 키 입력 처리
     def handle_key_input(self, keycode: int):
@@ -229,7 +229,6 @@ class CameraCalibration:
         valid, frame = self.video_capture.read()
 
         if not valid:
-            # self.state_machine.to_exit()
             self.state_machine.to_idle()
             return
 
@@ -271,6 +270,8 @@ class CameraCalibration:
             if complete:
                 img_points.append(pts)
 
+        # FIXME
+        # 해당 부분에서 카메라 캘리브레이션 실패
         if not img_points:
             print(
                 "No complete chessboard corners were detected in the selected images."
