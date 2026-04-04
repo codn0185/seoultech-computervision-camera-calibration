@@ -1,5 +1,3 @@
-from config import App
-
 import os
 import json
 import numpy as np
