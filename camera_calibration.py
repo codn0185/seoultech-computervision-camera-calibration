@@ -2,7 +2,6 @@ from config import App, ChessBoard, Keycode
 from utils import Json
 from base_video_app import BaseVideoApp
 
-import os
 import numpy as np
 import cv2 as cv
 
