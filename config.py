@@ -3,7 +3,7 @@ import os
 
 class App:
     VIDEO_DIRECTORY: str = "video"
-    VIDEO_FILENAME: str = "my_video.mp4"
+    VIDEO_FILENAME: str = "Checkerboard-A4-25mm-10x7"
     VIDEO_FILE_PATH: str = os.path.join(VIDEO_DIRECTORY, VIDEO_FILENAME)
 
     DATA_DIRECTORY: str = "data"
@@ -14,7 +14,7 @@ class App:
 
 
 class ChessBoard:
-    PATTERN: tuple[int, int] = (7, 10)  # Vertices (h, w)
+    PATTERN: tuple[int, int] = (10, 7)  # Vertices Pattern (w, h)
     CELL_SIZE: int = 25  # Cell Size (mm)
 
 
