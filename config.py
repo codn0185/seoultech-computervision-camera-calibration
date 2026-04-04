@@ -3,7 +3,7 @@ import os
 
 class App:
     VIDEO_DIRECTORY: str = "video"
-    VIDEO_FILENAME: str = "Checkerboard-A4-25mm-10x7"
+    VIDEO_FILENAME: str = "Checkerboard-A4-25mm-10x7.mp4"
     VIDEO_FILE_PATH: str = os.path.join(VIDEO_DIRECTORY, VIDEO_FILENAME)
 
     DATA_DIRECTORY: str = "data"
