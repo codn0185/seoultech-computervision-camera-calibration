@@ -50,5 +50,44 @@
 - `SPACE`: 비디오 정지/재생
 - `Enter`: 왜곡 보정 켜기/끄기
 
-## 결과 비교
+## 결과
 
+`./video/Checkerboard-A4-25mm-10x7.mp4` 비디오에서 25장의 이미지를 선택하여 카메라 캘리브레이션 수행 및 왜곡 보정한 결과이다.
+
+### 카메라 캘리브레이션 결과
+
+캘리브레이션 연산 결과는 아래 파일에 저장된다.
+
+- 파일 경로: `data/camera_calibration_data.json`
+- 저장 항목: `rmse`, `mtx`, `dist`, `rvecs`, `tvecs`
+
+| 항목 | 값 |
+| --- | --- |
+| RMSE (Reprojection Error) | `0.7158 px` |
+| `fx` | `1266.0886` |
+| `fy` | `1265.3970` |
+| `cx` | `965.9942` |
+| `cy` | `544.1912` |
+
+**카메라 행렬 K**
+
+```text
+[[1266.0886,    0.0000, 965.9942],
+ [   0.0000, 1265.3970, 544.1912],
+ [   0.0000,    0.0000,   1.0000]]
+```
+
+**왜곡 계수 d** (`k1, k2, p1, p2, k3`)
+
+```text
+[0.04437, -0.08117, 0.00208, -0.00088, 0.33324]
+```
+
+
+### 왜곡 보정 전/후 비교
+
+| 왜곡 보정 전 | 왜곡 보정 후 |
+| --- | --- |
+| ![왜곡 보정 전 1](docs/before_undistortion_1.png) | ![왜곡 보정 후 1](docs/after_undistortion_1.png) |
+| ![왜곡 보정 전 2](docs/before_undistortion_2.png) | ![왜곡 보정 후 2](docs/after_undistortion_2.png) |
+| ![왜곡 보정 전 3](docs/before_undistortion_3.png) | ![왜곡 보정 후 3](docs/after_undistortion_3.png) |
