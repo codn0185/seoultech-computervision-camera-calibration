@@ -94,11 +94,12 @@ class CameraCalibration(BaseVideoApp):
         )
 
         # 카메라 캘리브레이션
-        ret, mtx, dist, rvecs, tvecs = cv.calibrateCamera(
+        rmse, mtx, dist, rvecs, tvecs = cv.calibrateCamera(
             obj_points, img_points, gray.shape[::-1], None, None
         )
 
         self.camera_calibration_data = {
+            "rmse": rmse,  # Reprojection Error - RMSE
             "mtx": mtx,  # Camera Matrix - K
             "dist": dist,  # Distortion Coefficient - d
             "rvecs": rvecs,  # Rotation Matrix - R
