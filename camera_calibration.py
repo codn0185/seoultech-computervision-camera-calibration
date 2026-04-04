@@ -100,10 +100,10 @@ class CameraCalibration(BaseVideoApp):
 
         self.camera_calibration_data = {
             "rmse": rmse,  # Reprojection Error - RMSE
-            "mtx": mtx,  # Camera Matrix - K
-            "dist": dist,  # Distortion Coefficient - d
-            "rvecs": rvecs,  # Rotation Matrix - R
-            "tvecs": tvecs,  # Transform Matrix - t
+            "mtx": mtx,  # Camera Matrix (intrinsic) - K
+            "dist": dist,  # Distortion Coefficients - d
+            "rvecs": rvecs,  # Rotation Vectors (per image)
+            "tvecs": tvecs,  # Translation Vectors (per image)
         }
 
         # .json 파일로 저장
