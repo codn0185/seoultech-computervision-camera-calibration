@@ -108,6 +108,7 @@ class CameraCalibration(BaseVideoApp):
 
         # .json 파일로 저장
         self.save_camera_calibration_data_to_json()
+        print("Camera calibration completed and saved as a JSON file.")
 
         return True
 
