@@ -321,7 +321,7 @@ class CameraCalibration:
     def save_camera_calibration_data_to_json(self):
         Json.save(
             self.camera_calibration_data,
-            f"{App.DATA_DIRECTORY}/{App.CAMERA_CALIBRATION_DATA_FILE}",
+            f"{App.DATA_DIRECTORY}/{App.CAMERA_CALIBRATION_DATA_FILENAME}",
         )
 
 
